@@ -6,7 +6,7 @@ import "./index.css";
 import "./styles.css";
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/ufotest">
     <App />
   </BrowserRouter>
 );

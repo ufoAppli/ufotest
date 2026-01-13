@@ -6,6 +6,8 @@ import { buildPrizePhotoFilename } from "../utils/filenameBuilder";
 import { useState } from "react";
 
 export default function ConfirmEntry() {
+  console.log(">>> render ConfirmEntry.tsx", new Date().toISOString());
+  
   const nav = useNavigate();
   const { session, setSession, upsertEntryWithPhotos } = useAppStore();
   

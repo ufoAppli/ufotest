@@ -1,5 +1,7 @@
+console.log(">>> load module router.tsx");
+
 // src/router.tsx
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Top from "./pages/Top";
 import StoreName from "./pages/StoreName";
 import MachineSelect from "./pages/MachineSelect";
@@ -11,8 +13,23 @@ import StoreList from "./pages/StoreList";
 import StoreDetail from "./pages/StoreDetail";
 import DeleteConfirm from "./pages/DeleteConfirm";
 
-export function RouterView() {
+function RouterDebugBar() {
+  const loc = useLocation();
   return (
+    <div style={{
+      position: 'fixed', bottom: 0, left: 0, right: 0,
+      background: '#222', color: '#fff', padding: '6px 10px',
+      fontSize: 12, zIndex: 9999
+    }}>
+      <span>location.pathname: <b>{loc.pathname}</b></span>
+    </div>
+  );
+}
+
+export function RouterView() {
+  console.log(">>> render RouterView");
+  return (
+    <>
     <Routes>
       <Route path="/" element={<Top />} />
       <Route path="/store" element={<StoreName />} />
@@ -26,5 +43,7 @@ export function RouterView() {
       <Route path="/delete" element={<DeleteConfirm />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
+    <RouterDebugBar />
+    </>
   );
 }

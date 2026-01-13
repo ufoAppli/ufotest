@@ -30,7 +30,7 @@ export default defineConfig({
       },
       // オフライン対応（最低限の静的ファイルキャッシュ）
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,jpg,webp}'],
+        globPatterns: ['**/*.{js,css,svg,png,jpg,webp}'],
         navigateFallback: '/ufotest/index.html',
         cleanupOutdatedCaches: true,
         clientsClaim: true,
