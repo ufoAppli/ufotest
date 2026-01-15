@@ -1,5 +1,3 @@
-console.log(">>> load module router.tsx");
-
 // src/router.tsx
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Top from "./pages/Top";
